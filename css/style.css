@@ -1,6 +1,7 @@
 /* black color: #212529
 white color: #f8f9fa
 gray color: #adb5bd
+brown color: #767676;
 */
 /*-------------------------------------------*/
 /* BASIC SETUP */
@@ -34,11 +35,21 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     word-spacing: 1px;
     line-height: 1.7;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
+    padding: 50px 0 40px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    background-color: #212529;
+    padding: 1px;
+    margin: 10px auto;
 }
 
 h2 {
@@ -164,3 +175,59 @@ nav .wrapper {
     font-size: 11rem;
     color: #f8f9fa;
 }
+
+/*-------------------------------------------*/
+/* BIG IMAGE BANNER */
+/*-------------------------------------------*/
+.big-images {
+    padding: 15px;
+}
+
+.big-images-wrapper ul {
+    display: flex;
+}
+
+.big-images-wrapper ul li {
+    list-style: none;
+    width: 33.33%;
+    padding: 15px;
+}
+
+.big-images-wrapper ul li img {
+    width: 100%;
+}
+
+.product-collection {
+    padding: 15px;
+}
+
+.product-collection ul {
+    display: flex;
+}
+
+.product-collection ul li {
+    width: 25%;
+    padding: 15px;
+    list-style: none;
+}
+
+.product-thumbnail p {
+    text-align: center;
+    padding: 7px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.product-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.product-thumbnail .product-price {
+    color: #767676;
+    padding: 0;
+}
+
+
+
+
