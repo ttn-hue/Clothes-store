@@ -2,6 +2,8 @@
 white color: #f8f9fa
 gray color: #adb5bd
 brown color: #767676;
+black-footer: #303030;
+text-gray: #bababa
 */
 /*-------------------------------------------*/
 /* BASIC SETUP */
@@ -55,7 +57,15 @@ h1::after {
 h2 {
     font-size: 2rem;
     word-spacing: 1px;
-    line-height: 1.7px;
+    line-height: 1.7;
+}
+
+h3 {
+    font-size: 1.5rem;
+    word-spacing: 0.8px;
+    line-height: 1.7;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .btn:link,
@@ -100,6 +110,13 @@ a:link, a:visited {
     text-decoration: none;
     color: #212529;
     font-size: 1.6rem;
+}
+
+.logo-branch {
+    font-size: 2.8rem;
+    font-weight: 800;
+    padding: 5px 0;
+    text-align: center;
 }
 
 /*-------------------------------------------*/
@@ -151,10 +168,6 @@ nav .wrapper {
 
 .logo-middle {
     width: 30%;
-    font-size: 2.8rem;
-    font-weight: 800;
-    padding: 5px 0;
-    text-align: center;
 }
 
 .header-text-box {
@@ -197,8 +210,12 @@ nav .wrapper {
     width: 100%;
 }
 
+/*-------------------------------------------*/
+/* NEW ARRIVAL */
+/*-------------------------------------------*/
+
 .product-collection {
-    padding: 15px;
+    padding: 15px 0 70px;
 }
 
 .product-collection ul {
@@ -228,6 +245,82 @@ nav .wrapper {
     padding: 0;
 }
 
+/*-------------------------------------------*/
+/* FOOTER */
+/*-------------------------------------------*/
+
+footer {
+    background-color: #303030;
+}
+
+.footer-wrapper {
+    display: flex;
+    padding: 100px 0 40px;
+    color: #f8f9fa;
+}
+
+.footer-wrapper li a:link, .footer-wrapper li a:visited {
+    color: #bababa;
+}
+
+.branch {
+    width: 30%;
+}
+
+.support {
+    width: 25%;
+}
+
+.shop {
+    width: 25%;
+}
+
+.company {
+    width: 25%;
+}
+
+.contact {
+    width: 25%;
+}
+
+.footer-wrapper h3 {
+    padding: 10px 0;
+}
+
+.footer-wrapper li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.branch .big-tech-icons, .logo-branch {
+    text-align: left;
+}
+
+.divider {
+    height: 0.1px;
+    background-color: #7676767b;
+}
+
+.copyright {
+    display: flex;
+    padding: 15px;
+}
+
+.copyright p {
+    width: 50%;
+    justify-content: flex-start;
+    color: #767676;
+}
+
+.copyright div {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
 
 
+.copyright img {
+    height: 25px;
+    width: 300px;
+}
 
