@@ -1,0 +1,87 @@
+/* black color: #212529
+white color: #f8f9fa
+gray color: #adb5bd
+*/
+/*-------------------------------------------*/
+/* BASIC SETUP */
+/*-------------------------------------------*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* 10px = 1rem */
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #212529
+}
+
+/*-------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*-------------------------------------------*/
+
+.row {
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+    word-spacing: 1px;
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    word-spacing: 1px;
+    line-height: 1.7px;
+}
+
+.btn:link,
+.btn:visited {
+    display: block;
+    padding: 15px 30px;
+    font-weight: 300;
+    color: #212529;
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #212529;
+}
+
+section {
+    padding: 50px 0;
+}
+
+input[type='submit']{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 30px;
+    color: #f8f9fa;
+    background-color: #212529;
+}
+
+input[type='submit']:hover {
+    border: 2px solid #212529;
+    background-color: #212529;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
