@@ -1,6 +1,9 @@
 /* black color: #212529
 white color: #f8f9fa
 gray color: #adb5bd
+brown color: #767676;
+black-footer: #303030;
+text-gray: #bababa
 */
 /*-------------------------------------------*/
 /* BASIC SETUP */
@@ -19,9 +22,9 @@ html {
 
 body {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: 400;
-    color: #212529
+    color: #212529;
 }
 
 /*-------------------------------------------*/
@@ -34,17 +37,35 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     word-spacing: 1px;
     line-height: 1.7;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
+    padding: 50px 0 40px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    background-color: #212529;
+    padding: 1px;
+    margin: 10px auto;
 }
 
 h2 {
     font-size: 2rem;
     word-spacing: 1px;
-    line-height: 1.7px;
+    line-height: 1.7;
+}
+
+h3 {
+    font-size: 1.5rem;
+    word-spacing: 0.8px;
+    line-height: 1.7;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .btn:link,
@@ -83,5 +104,223 @@ p {
     font-size: 1.6rem;
     line-height: 1.5;
     text-align: justify;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #212529;
+    font-size: 1.6rem;
+}
+
+.logo-branch {
+    font-size: 2.8rem;
+    font-weight: 800;
+    padding: 5px 0;
+    text-align: center;
+}
+
+/*-------------------------------------------*/
+/* HEADER */
+/*-------------------------------------------*/
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/cover-1.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 650px;
+    position: relative;
+}
+
+nav {
+    height: 90px;
+    background-color: #f8f9fa;
+    padding: 20px 16px;
+}
+
+nav .wrapper {
+    display: flex;
+}
+
+.main-nav-left {
+    width: 35%;
+    display: flex;
+}
+
+.main-nav-left li {
+    padding: 12px;
+    list-style: none;
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+
+.main-nav-right {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-nav-right li {
+    padding: 12px;
+    list-style: none;
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+.logo-middle {
+    width: 30%;
+}
+
+.header-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-text-box #small-text {
+    font-size: 2.8rem;
+    color: #f8f9fa;
+    text-align: center;
+
+}
+
+.header-text-box #big-text {
+    font-size: 11rem;
+    color: #f8f9fa;
+}
+
+/*-------------------------------------------*/
+/* BIG IMAGE BANNER */
+/*-------------------------------------------*/
+.big-images {
+    padding: 15px;
+}
+
+.big-images-wrapper ul {
+    display: flex;
+}
+
+.big-images-wrapper ul li {
+    list-style: none;
+    width: 33.33%;
+    padding: 15px;
+}
+
+.big-images-wrapper ul li img {
+    width: 100%;
+}
+
+/*-------------------------------------------*/
+/* NEW ARRIVAL */
+/*-------------------------------------------*/
+
+.product-collection {
+    padding: 15px 0 70px;
+}
+
+.product-collection ul {
+    display: flex;
+}
+
+.product-collection ul li {
+    width: 25%;
+    padding: 15px;
+    list-style: none;
+}
+
+.product-thumbnail p {
+    text-align: center;
+    padding: 7px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.product-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.product-thumbnail .product-price {
+    color: #767676;
+    padding: 0;
+}
+
+/*-------------------------------------------*/
+/* FOOTER */
+/*-------------------------------------------*/
+
+footer {
+    background-color: #303030;
+}
+
+.footer-wrapper {
+    display: flex;
+    padding: 100px 0 40px;
+    color: #f8f9fa;
+}
+
+.footer-wrapper li a:link, .footer-wrapper li a:visited {
+    color: #bababa;
+}
+
+.branch {
+    width: 30%;
+}
+
+.support {
+    width: 25%;
+}
+
+.shop {
+    width: 25%;
+}
+
+.company {
+    width: 25%;
+}
+
+.contact {
+    width: 25%;
+}
+
+.footer-wrapper h3 {
+    padding: 10px 0;
+}
+
+.footer-wrapper li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.branch .big-tech-icons, .logo-branch {
+    text-align: left;
+}
+
+.divider {
+    height: 0.1px;
+    background-color: #7676767b;
+}
+
+.copyright {
+    display: flex;
+    padding: 15px;
+}
+
+.copyright p {
+    width: 50%;
+    justify-content: flex-start;
+    color: #767676;
+}
+
+.copyright div {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.copyright img {
+    height: 25px;
+    width: 300px;
 }
 
