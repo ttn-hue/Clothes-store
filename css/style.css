@@ -433,3 +433,140 @@ form.formSignIn {
     margin-right: auto;
     padding-top: 20px;
 }
+
+/*-------------------------------------------*/
+/* SINGLE PRODUCT */
+/*-------------------------------------------*/
+  
+.products {
+    display: flex;
+     flex-wrap: wrap;
+ }
+ 
+ .product-card {
+     padding: 2%;
+     flex-grow: 2;
+     flex-basis: 16%;
+     display: flex;
+ }
+ 
+ .product-card {
+     flex: 1 16%;
+ }
+ 
+ .product-image img {
+ max-width: 100%;
+ display: flex;
+ }
+ 
+ .product-info {
+     margin-left: 150px;
+ }
+ 
+ @media (media-width: 920px) {
+     .product-card {
+         flex:  1 21%;
+     }
+ }
+ 
+ @media (max-width: 600px){
+     .product-card {
+         flex: 1 46%;
+     }
+ }
+ 
+ .buy {
+     padding: 5px;
+     text-align: center;
+     font-family: 'Jost', sans-serif;
+     margin-top: 10px;
+     left: 50%;
+     border: none;
+     border-radius: 4px;
+     font-size: 1.5rem;
+     letter-spacing: 2px;
+     color: white;
+     background-color: #bababa;
+     box-shadow: 0 4px 2px -2px gray;
+ }
+ 
+ .image_buy{
+     padding-left: 8px;
+ }
+ 
+ .checked {
+     color: orange;
+ }
+  .select{
+     padding: 5px;
+  }
+ 
+ .size{
+     float: left;
+ }
+ 
+ .required {
+     float: left;
+     margin-left: 10px;
+     color: gray;
+     font-size: 14px;
+     text-align: center;
+ }
+ 
+ .title{
+  font-size: 25px;
+  font-style: bold;
+ }
+ 
+ .real-price{
+     float: left;
+ }
+ 
+ .lowered {
+     float: left;
+     margin-left: 10px;
+     color: gray;
+     text-decoration: line-through;
+ }
+ 
+ .grade{
+ float: right;
+ display: flex;
+ align-items: center;
+ }
+ 
+ .stars{
+     padding-right: 10px;
+ }
+ 
+ .div-size {
+     display: flex;
+ }
+ 
+ .div-quantity {
+     display: flex;
+ }
+ 
+ .button-cart {
+     height: 40px;
+     background-color: black;
+     color: white;
+     width: 100%;
+     text-align: center;
+     font-family: 'Jost', sans-serif;
+     font-style: bold;
+     font-size: 18px;
+ }
+ 
+ .category {
+     font-style: bold;
+ }
+ 
+ .tags {
+     font-style: bold;
+ }
+ 
+ .descriptions {
+     color: gray;
+ }
+ 
