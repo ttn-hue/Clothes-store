@@ -68,13 +68,27 @@ h3 {
     text-transform: uppercase;
 }
 
-.btn:link,
+/* .btn:link,
 .btn:visited {
     display: block;
     padding: 15px 30px;
     font-weight: 300;
     color: #212529;
     text-decoration: none;
+} */
+
+.btn {
+    outline: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.cart-btn {
+    width: 200px;
+    height: 50px;
+    color: #f8f9fa;
+    background-color: #212529;
+    border: 1px solid #212529;
 }
 
 .btn:hover,
@@ -116,7 +130,6 @@ a:link, a:visited {
     font-size: 2.8rem;
     font-weight: 800;
     padding: 5px 0;
-    text-align: center;
 }
 
 /*-------------------------------------------*/
@@ -168,6 +181,10 @@ nav .wrapper {
 
 .logo-middle {
     width: 30%;
+}
+
+.logo-middle .logo-branch {
+    text-align: center;
 }
 
 .header-text-box {
@@ -243,6 +260,97 @@ nav .wrapper {
 .product-thumbnail .product-price {
     color: #767676;
     padding: 0;
+}
+
+
+/*-------------------------------------------*/
+/* SHOPPING CART */
+/*-------------------------------------------*/
+.section-shoppingcart {
+    padding: 50px 0 300px;
+}
+
+.shoppingcart-wrapper {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.shoppingcart-wrapper ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    font-size: 1.6rem;
+}
+
+.shoppingcart-wrapper ul li {
+    border-bottom: 1px solid #303030;
+    padding: 10px;
+}
+
+.shoppingcart-wrapper ul li img {
+    width: 70px;
+    height: 70px;
+    vertical-align: middle;
+}
+
+
+.shoppingcart-wrapper ul li:first-child {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.shoppingcart-wrapper ul li:nth-child(2) {
+    width: 40%;
+}
+
+.shoppingcart-wrapper ul li:nth-child(3) {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoppingcart-wrapper ul li:nth-child(4) {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoppingcart-wrapper ul li:last-child {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-cart-item {
+    padding: 1px 7px;
+    cursor: pointer;
+}
+
+.shoppingcart-wrapper ul li input {
+    width: 50px;
+    font-size: 1.8rem;
+    padding: 0 5px;
+}
+
+.cart-button {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.cart-button button {
+    margin: 20px;
+}
+
+/*-------------------------------------------*/
+/* BREADCUM */
+/*-------------------------------------------*/
+.section-breadcumb span {
+    font-size: 1.6rem;
+    padding: 8px;
 }
 
 /*-------------------------------------------*/
