@@ -296,6 +296,15 @@ footer {
     text-align: left;
 }
 
+.branch .big-tech-icons a:link, .branch .big-tech-icons a:visited {
+    color: #f8f9fa;
+    padding-right: 15px;
+}
+
+.branch .big-tech-icons {
+    padding-top: 20px;
+}
+
 .divider {
     height: 0.1px;
     background-color: #7676767b;
