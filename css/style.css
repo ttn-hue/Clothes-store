@@ -42,7 +42,7 @@ h1 {
     line-height: 1.7;
     font-weight: 600;
     text-align: center;
-    padding: 50px 0 40px;
+    padding: 30px 0 50px;
 }
 
 h1::after {
@@ -55,9 +55,11 @@ h1::after {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     word-spacing: 1px;
     line-height: 1.7;
+    font-weight: 400;
+    padding: 20px 0 0;
 }
 
 h3 {
@@ -91,13 +93,28 @@ h3 {
     border: 1px solid #212529;
 }
 
+
+
 .btn:hover,
 .btn:active {
     background-color: #212529;
 }
 
 section {
-    padding: 50px 0;
+    padding: 50px 0 0;
+}
+
+input {
+    outline: none;
+    border: 1px solid #212529;
+    padding: 10px;
+    border-color: #bababa;
+    width: 100%;
+}
+
+label {
+    font-size: 1.6rem;
+    padding: 15px 0 5px;
 }
 
 input[type='submit']{
@@ -109,8 +126,16 @@ input[type='submit']{
     background-color: #212529;
 }
 
+select {
+    width: 100%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 10px 0;
+    outline: none;
+    border-color: #bababa;
+}
+
 input[type='submit']:hover {
-    border: 2px solid #212529;
     background-color: #212529;
 }
 
@@ -514,7 +539,7 @@ footer {
 
 form.formSignIn {
     padding-top: 20px;
-    
+
 }
 
 .submit {
@@ -544,4 +569,107 @@ form.formSignIn {
     .main {
         border-radius: 0px;
     }
+}
+
+/*-------------------------------------------*/
+/* ORDER */
+/*-------------------------------------------*/
+.section-checkout {
+    padding-bottom: 100px;
+}
+
+.checkout-wrapper {
+    display: flex;
+}
+
+.checkout-form {
+    width: 60%;
+}
+
+.checkout-order {
+    width: 40%;
+    margin-left: 15%;
+}
+
+.checkout-form label, .checkout-form input {
+    display: block;
+}
+
+.fullname {
+    display: flex;
+    flex-direction: row;
+}
+
+.fullname label, .fullname input {
+  display: block;
+}
+
+.fullname .firstname, .fullname .lastname {
+    width: 45%;
+}
+
+.fullname .firstname {
+    margin-right: 5%;
+}
+
+.fullname .lastname {
+    margin-left: 5%;
+}
+
+.single-order {
+    display: flex;
+    padding: 20px 0 20px;
+}
+
+
+.single-order img {
+    width: 94px;
+    height: 112px;
+}
+
+.single-order ul {
+    padding-left: 20px;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.single-order ul li:first-child {
+    font-weight: 600;
+}
+
+.order-body {
+    padding: 20px 0;
+}
+
+.order-body ul {
+    list-style: none;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.order-body ul li {
+    padding: 20px 0;
+    font-size: 1.7rem;
+    border-bottom: 0.5px solid #dcdcdc;
+    ;
+}
+
+.order-body ul li:last-child {
+    border-bottom: none;
+}
+
+.order-body ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-btn {
+    padding: 15px !important;
+    width: 100%;
+    margin: 20px 0;
+    text-transform: none !important;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.7;
+    letter-spacing: 1px;
 }
