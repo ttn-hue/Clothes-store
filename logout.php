@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+  session_start();
+  session_destroy(); // deletes the session
+?><!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Shopper</title>
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Shopper</title>
 </head>
 <body>
-    <nav>
-        <div class="row">
+<nav>
+    <div class="row">
             <div class="wrapper">
                 <ul class="main-nav-left">
                     <li><a href="#">Shop</a></li>
@@ -23,9 +26,9 @@
                     <p class="logo-branch">Shopper</p>
                 </div>
                 <ul class="main-nav-right">
-                    <li><a href="#">Sign in</a></li>
+                    <li><a href="login.php">Sign in</a></li>
                     <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Log Out</a></li>
+                    <li><a href="logout.php">Log Out</a></li>
                     <li><a href="#"><i class="fa fa-search fa-ms"></i></a></li>
                     <li><a href="#"><i class="fa fa-user fa-ms"></i></a></li>
                     <li><a href="#"><i class="fa fa-shopping-cart fa-ms"></i></a></li>
@@ -33,25 +36,23 @@
             </div>
         </div>
     </nav>
-    <div class="main"> 
-        <form class="formSignIn">
-            <img class="logo" src="image/shopper.png" alt="brand card" width="100px" height="100px">
-        <p class="login">Sign In</p>
-            <input class="username" type="text" placeholder="Username" src="/image/user.png">
-            <input class="password" type="password" placeholder="Password" src="/image/user.png">
-        </form>
-        <button class="submit">Sign In</button>
+  <main>
+    <div class="main">
+        <?php 
+            echo 'Successfully logged out!';
+        ?>
     </div>
-    <footer>
+  </main>
+  <footer>
         <div class="row">
             <div class="footer-wrapper">
                 <div class="branch">
                     <p class="logo-branch">Shopper</p>
                     <p class="big-tech-icons">
-                        <span><a href="#"><i class="fa fa-facebook sm"></i></a></span>
-                        <span><a href="#"><i class="fa fa-twitter sm"></i></a></span>
-                        <span><a href="#"><i class="fa fa-youtube sm"></i></a></span>
-                        <span><a href="#"><i class="fa fa-instagram sm"></i></a></span>
+                        <span><i class="fa fa-facebook sm"></i></span>
+                        <span><i class="fa fa-twitter sm"></i></span>
+                        <span><i class="fa fa-youtube sm"></i></span>
+                        <span><i class="fa fa-instagram sm"></i></span>
                     </p>
                 </div>
                 <div class="support">
