@@ -604,7 +604,7 @@ form.formSignIn {
      flex-grow: 2;
      flex-basis: 16%;
      display: flex;
-  }
+    }
 
   #new-user {
    font-size: 18px;
@@ -618,7 +618,7 @@ form.formSignIn {
     padding: 16px;
     background-color: white;
     padding-top: 30px;
-  }
+}
   
   input[type=text], input[type=password] {
     width: 100%;
