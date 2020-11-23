@@ -37,10 +37,9 @@
         </div>
     </nav>
   <main>
-    <div class="main">
-        <?php 
-            echo 'Successfully logged out!';
-        ?>
+    <div class="logout">
+    <img class="logout_image" src="image/logout.png" alt="logout_image" width="40px" height="50px">
+        <p>Successfully logged out!</p>
     </div>
   </main>
   <footer>

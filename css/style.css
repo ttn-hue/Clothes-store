@@ -433,3 +433,25 @@ form.formSignIn {
     margin-right: auto;
     padding-top: 20px;
 }
+
+/*-------------------------------------------*/
+/* LOGOUT */
+/*-------------------------------------------*/
+
+.logout {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 100px;
+    border-radius: 1.2em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7em auto;
+    transition: 0.5s;
+}
+
+.logout p{
+    font-size: 30px;
+    padding-left: 15px;
+}
