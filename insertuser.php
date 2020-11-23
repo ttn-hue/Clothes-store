@@ -1,25 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Shopper</title>
-    </head>
+
+
+    <script>
+    
+    $(document).ready(function(){
+      $('#userform').on('submit', function(e){
+        // stop the form from submitting
+        e.preventDefault();
+        //alert('form stopped');
+        //fetch the fields
+        var email = $('#email').val();
+        var psw = $('#psw').val();
+        var repeat = $('#psw-repeat').val();
+        // ajax call
+        $.ajax({
+          type  : 'POST',
+          url   : 'ajaxprocess.php',
+          data  : {
+            email : email,
+            psw : psw,
+            repeat : repeat
+          },
+          success : function(processeddata){
+            $('#formResult').html(processeddata);
+          }
+        });
+
+      });
+    });
+
+  </script>
+</head>
 <body>
-    <div class="main"> 
-        <form class="formSignIn">
-            <img class="logo" src="image/shopper.png" alt="brand card" width="100px" height="100px">
-        <p class="login">Sign In</p>
-            <input class="username" type="text" placeholder="Username" src="/image/user.png">
-            <input class="password" type="password" placeholder="Password" src="/image/user.png">
-        </form>
-        <button class="submit">Sign In</button>
-    </div>
+<nav>
+        <div class="row">
+            <div class="wrapper">
+                <ul class="main-nav-left">
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="logo-middle">
+                    <p class="logo-branch">Shopper</p>
+                </div>
+                <ul class="main-nav-right">
+                    <li><a href="#">Sign in</a></li>
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#">Log Out</a></li>
+                    <li><a href="#"><i class="fa fa-search fa-ms"></i></a></li>
+                    <li><a href="#"><i class="fa fa-user fa-ms"></i></a></li>
+                    <li><a href="#"><i class="fa fa-shopping-cart fa-ms"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section> 
+    <form name="userform" id="userform" method="Post" action="">
+        <div class="register-container">
+          <h2>Register</h2>
+         
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+          
+          <input type="submit" value="Submit" name="submit"  class="registerbtn">
+        </div>
+    </form>
+    </section>
+    <section>
+        <div class="formData">
+            <p id="formResult"></p>
+        </div>
+    </section>
     <footer>
         <div class="row">
             <div class="footer-wrapper">

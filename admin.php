@@ -1,6 +1,10 @@
+<?php
+include('includes/db_connection.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+    
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -9,18 +13,68 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
         <title>Shopper</title>
-    </head>
+    
+</head>
 <body>
-    <div class="main"> 
-        <form class="formSignIn">
-            <img class="logo" src="image/shopper.png" alt="brand card" width="100px" height="100px">
-        <p class="login">Sign In</p>
-            <input class="username" type="text" placeholder="Username" src="/image/user.png">
-            <input class="password" type="password" placeholder="Password" src="/image/user.png">
-        </form>
-        <button class="submit">Sign In</button>
+    <nav>
+        <div class="row">
+            <div class="wrapper">
+                <ul class="main-nav-left">
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="logo-middle">
+                    <p class="logo-branch">Shopper</p>
+                </div>
+                <ul class="main-nav-right">
+                    <li><a href="#">Sign in</a></li>
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#">Log Out</a></li>
+                    <li><a href="#"><i class="fa fa-search fa-ms"></i></a></li>
+                    <li><a href="#"><i class="fa fa-user fa-ms"></i></a></li>
+                    <li><a href="#"><i class="fa fa-shopping-cart fa-ms"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+    <div id="admin-container">
+      <main> 
+    <table id="customers">
+      <thead>
+      <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Role</th>
+        </tr>
+      </thead> 
+      <tbody>
+      <?php
+          $sqlQuery = "SELECT * FROM `user_login`";
+          $sqlResult = $db->query($sqlQuery); // execute the query
+          if($sqlResult->num_rows > 0) // if data is returned from DB
+          {
+            // iterate through the rows
+            while($row = $sqlResult->fetch_assoc())
+            {
+              ?>
+                <tr>
+                  <td><?php echo $row['id']; ?></td>
+                  <td><?php echo $row['email']; ?></td>
+                  <td><?php echo $row['password']; ?></td>
+                  <td><?php echo $row['role']; ?></td>
+                </tr>
+              <?php
+            }
+          }
+        ?>
+      </tbody> 
+    </table>
+      </main>
     </div>
-    <footer>
+      <footer>
         <div class="row">
             <div class="footer-wrapper">
                 <div class="branch">
