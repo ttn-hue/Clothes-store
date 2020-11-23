@@ -713,6 +713,100 @@ form.formSignIn {
  }
 
 /*-------------------------------------------*/
+<<<<<<< HEAD
+/* ADMIN */
+/*-------------------------------------------*/
+
+#customers {
+    font-family: 'Jost', sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 30px;
+    font-size: 16px;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #adb5bd;
+    color: white;
+  }
+
+  #admin-container{
+    padding: 2%;
+     flex-grow: 2;
+     flex-basis: 16%;
+     display: flex;
+    }
+
+  #new-user {
+   font-size: 18px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .register-container {
+    padding: 16px;
+    background-color: white;
+    padding-top: 30px;
+}
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+.registerbtn {
+    background-color: #adb5bd;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-size: 14px;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+
+  b{
+      font-size: 14px;
+  }
+=======
 /* ORDER */
 /*-------------------------------------------*/
 .section-checkout {
@@ -814,3 +908,4 @@ form.formSignIn {
     line-height: 1.7;
     letter-spacing: 1px;
 }
+>>>>>>> develop
