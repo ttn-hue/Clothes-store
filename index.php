@@ -1,6 +1,9 @@
+<?php include('includes/db_connection.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include('includes/head.php') ?>
+<?php
+    include('includes/head.php');
+?>
 <body>
     <?php include('includes/nav.php') ?>
     <header>
@@ -24,53 +27,29 @@
         <h1>New Arrivals</h1>
         <div class="product-collection">
             <ul>
-                <li>
-                    <div class="product-thumbnail">
-                        <a href="#">
-                            <img src="image/product-1.jpg" alt="product image">
-                            <p class="product-name">Cotton leaf print Shirt</p>
-                            <p class="product-price">$65.00</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product-thumbnail">
-                        <img src="image/product-2.jpg" alt="product image">
-                        <a href="#">
-                            <p class="product-name">Leather Sneakers</p>
-                        </a>
-                        <p class="product-price">$165.00</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="product-thumbnail">
-                            <img src="image/product-3.jpg" alt="product image">
-                            <a href="#">
-                                <p class="product-name">Another fine dress</p>
-                            </a>
-                            <p class="product-price">$9.00</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="product-thumbnail">
-                        <a href="#">
-                            <img src="image/product-4.jpg" alt="product image">
-                            <a href="#">
-                                <p class="product-name">Baseball Cap</p>
-                            </a>
-                            <p class="product-price">$65.00</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product-thumbnail">
-                        <img src="image/product-5.jpg" alt="product image">
-                        <a href="#"></a>
-                            <p class="product-name">Leather sneakers</p>
-                        </a>
-                        <p class="product-price">$19.00</p>
-                    </div>
-                </li>
+                <?php
+                    $sqlQuery = "SELECT * FROM `products`";
+                    $sqlResult = $db->query($sqlQuery);
+                    if($sqlResult->num_rows > 0)
+                    {
+                        // iterate through the rows
+                        while($row = $sqlResult->fetch_assoc())
+                        {
+                            ?>
+                                <li>
+                                    <div class="product-thumbnail">
+                                        <?php echo "<a href='singleproduct.php?id=".$row['id'] ?>
+                                            <img src="image/product-1.jpg" alt="product image">
+                                            <p class="product-name"><?php echo $row['name'] ?></p>
+                                            <p class="product-price"><?php echo "$".$row['price']; ?></p>
+                                        </a>
+                                    </div>
+                                </li>
+                            <?php
+                        }
+                    }
+                ?>
+
             </ul>
         </div>
     </section>
