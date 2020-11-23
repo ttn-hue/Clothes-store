@@ -36,10 +36,12 @@
             </div>
         </div>
     </nav>
+  <main>
     <div class="logout">
     <img class="logout_image" src="image/logout.png" alt="logout_image" width="40px" height="50px">
         <p>Successfully logged out!</p>
     </div>
+  </main>
   <footer>
         <div class="row">
             <div class="footer-wrapper">
