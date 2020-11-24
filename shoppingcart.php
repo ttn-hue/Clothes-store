@@ -1,8 +1,6 @@
 <?php
-
-    session_start();
-    include('includes/db_connection.php');
-
+session_start();
+include('includes/db_connection.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,15 +20,15 @@
         <div class="row">
             <div class="shoppingcart-wrapper">
                 <?php
-                    $item1 = (object)['name'=>'Cotton leaf print Shirt', 'price'=>65.00, 'quantity'=>1];
-                    $item2 = (object)['name'=>'Cotton leaf print Shirt', 'price'=>125.00, 'quantity'=>1];
+                    // $item1 = (object)['name'=>'Cotton leaf print Shirt', 'price'=>65.00, 'quantity'=>1];
+                    // $item2 = (object)['name'=>'Cotton leaf print Shirt', 'price'=>125.00, 'quantity'=>1];
 
 
-                    $listItems = [];
-                    array_push($listItems, $item1, $item2);
+                    // $listItems = [];
+                    // array_push($listItems, $item1, $item2);
 
                     // set shopping cart item objects to session
-                    $_SESSION['shoppingcart'] = $listItems;
+                    // $_SESSION['shoppingcart'] = $listItems;
 
 
                     if(isset($_SESSION['shoppingcart']))
