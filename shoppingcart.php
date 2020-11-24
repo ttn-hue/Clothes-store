@@ -1,3 +1,12 @@
+<?php
+session_start();
+include('includes/db_connection.php');
+
+$itemList = $_SESSION['shoppingcart'];
+
+print_r($itemList);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
