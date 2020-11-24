@@ -1,11 +1,6 @@
 <?php
 session_start();
 include('includes/db_connection.php');
-
-$itemList = $_SESSION['shoppingcart'];
-
-print_r($itemList);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,24 +19,42 @@ print_r($itemList);
     <section class="section-shoppingcart">
         <div class="row">
             <div class="shoppingcart-wrapper">
-                <ul>
-                    <li>1.</li>
-                    <li><img src="image/product-1.jpg" alt="product"> Cotton leaf print Shirt</li>
-                    <li><input type="number" name="quantity" min="1" value=1></li>
-                    <li>$65.00</li>
-                    <li><button class="remove-cart-item"><i class="fa fa-times fa-sm"></i></button></li>
-                </ul>
-                <ul>
-                    <li>2.</li>
-                    <li><img src="image/product-1.jpg" alt="product"> Cotton leaf print Shirt</li>
-                    <li><input type="number" name="quantity" min="1" value=1></li>
-                    <li>$65.00</li>
-                    <li><button class="remove-cart-item"><i class="fa fa-times fa-sm"></i></button></li>
-                </ul>
+                <?php
+                    // $item1 = (object)['name'=>'Cotton leaf print Shirt', 'price'=>65.00, 'quantity'=>1];
+                    // $item2 = (object)['name'=>'Cotton leaf print Shirt', 'price'=>125.00, 'quantity'=>1];
+
+
+                    // $listItems = [];
+                    // array_push($listItems, $item1, $item2);
+
+                    // set shopping cart item objects to session
+                    // $_SESSION['shoppingcart'] = $listItems;
+
+
+                    if(isset($_SESSION['shoppingcart']))
+                    {
+                        $shoppingcart = $_SESSION['shoppingcart'];
+                        for($i=0; $i<count($shoppingcart); $i++)
+                        {
+                            ?>
+                                <ul>
+                                    <li><?php echo ($i+1)."."; ?></li>
+                                    <li><img src="image/product-1.jpg" alt="product"><?php echo $shoppingcart[$i]->name; ?></li>
+                                    <li><input type="number" name="quantity" min="1" value="<?php echo $shoppingcart[$i]->quantity; ?>"></li>
+                                    <li><?php echo "$".$shoppingcart[$i]->price; ?></li>
+                                    <li><button class="remove-cart-item"><i class="fa fa-times fa-sm"></i></button></li>
+                                </ul>
+                            <?php
+                        }
+
+
+                    }
+                ?>
+
             </div>
             <div class="cart-button">
-                <button class="btn cart-btn">Continue shopping</button>
-                <button class="btn cart-btn">Check out</button>
+                <a class="btn cart-btn" href="index.php">Continue shopping</a>
+                <a class="btn cart-btn" href="checkout.php">Check out</a>
             </div>
         </div>
     </section>

@@ -82,15 +82,17 @@ h3 {
 .btn {
     outline: none;
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .cart-btn {
-    width: 200px;
-    height: 50px;
-    color: #f8f9fa;
+    display: inline-block;
+    color: #f8f9fa !important;
     background-color: #212529;
     border: 1px solid #212529;
+    width: 150px;
+    height: 50px;
+    padding: 13px 0;
 }
 
 
@@ -366,7 +368,7 @@ nav .wrapper {
     text-align: center;
 }
 
-.cart-button button {
+.cart-button a {
     margin: 20px;
 }
 
@@ -601,44 +603,44 @@ form.formSignIn {
 /*-------------------------------------------*/
 /* SINGLE PRODUCT */
 /*-------------------------------------------*/
-  
+
 .products {
     display: flex;
      flex-wrap: wrap;
  }
- 
+
  .product-card {
      padding: 2%;
      flex-grow: 2;
      flex-basis: 16%;
      display: flex;
  }
- 
+
  .product-card {
      flex: 1 16%;
  }
- 
+
  .product-image img {
  max-width: 100%;
  display: flex;
  }
- 
+
  .product-info {
      margin-left: 150px;
  }
- 
+
  @media (media-width: 920px) {
      .product-card {
          flex:  1 21%;
      }
  }
- 
+
  @media (max-width: 600px){
      .product-card {
          flex: 1 46%;
      }
  }
- 
+
  .buy {
      padding: 5px;
      text-align: center;
@@ -653,22 +655,22 @@ form.formSignIn {
      background-color: #bababa;
      box-shadow: 0 4px 2px -2px gray;
  }
- 
+
  .image_buy{
      padding-left: 8px;
  }
- 
+
  .checked {
      color: orange;
  }
   .select{
      padding: 5px;
   }
- 
+
  .size{
      float: left;
  }
- 
+
  .required {
      float: left;
      margin-left: 10px;
@@ -676,41 +678,41 @@ form.formSignIn {
      font-size: 14px;
      text-align: center;
  }
- 
+
  .title{
   font-size: 25px;
   font-style: bold;
  }
- 
+
  .real-price{
      float: left;
  }
- 
+
  .lowered {
      float: left;
      margin-left: 10px;
      color: gray;
      text-decoration: line-through;
  }
- 
+
  .grade{
  float: right;
  display: flex;
  align-items: center;
  }
- 
+
  .stars{
      padding-right: 10px;
  }
- 
+
  .div-size {
      display: flex;
  }
- 
+
  .div-quantity {
      display: flex;
  }
- 
+
  .button-cart {
      height: 40px;
      background-color: black;
@@ -721,21 +723,20 @@ form.formSignIn {
      font-style: bold;
      font-size: 18px;
  }
- 
+
  .category {
      font-style: bold;
  }
- 
+
  .tags {
      font-style: bold;
  }
- 
+
  .descriptions {
      color: gray;
  }
 
 /*-------------------------------------------*/
-<<<<<<< HEAD
 /* ADMIN */
 /*-------------------------------------------*/
 
@@ -746,16 +747,16 @@ form.formSignIn {
     margin: 30px;
     font-size: 16px;
   }
-  
+
   #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
   }
-  
+
   #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
+
   #customers tr:hover {background-color: #ddd;}
-  
+
   #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -778,13 +779,13 @@ form.formSignIn {
   * {
     box-sizing: border-box;
   }
-  
+
   .register-container {
     padding: 16px;
     background-color: white;
     padding-top: 30px;
 }
-  
+
   input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
@@ -793,17 +794,17 @@ form.formSignIn {
     border: none;
     background: #f1f1f1;
   }
-  
+
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
   }
-  
+
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
   }
-  
+
 .registerbtn {
     background-color: #adb5bd;
     color: white;
@@ -815,11 +816,11 @@ hr {
     opacity: 0.9;
     font-size: 14px;
   }
-  
+
   .registerbtn:hover {
     opacity: 1;
   }
-  
+
 .signin {
     background-color: #f1f1f1;
     text-align: center;
@@ -828,7 +829,6 @@ hr {
   b{
       font-size: 14px;
   }
-=======
 /* ORDER */
 /*-------------------------------------------*/
 .section-checkout {
@@ -930,4 +930,3 @@ hr {
     line-height: 1.7;
     letter-spacing: 1px;
 }
->>>>>>> develop

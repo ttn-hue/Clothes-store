@@ -7,9 +7,9 @@ $email = $_SESSION['email'];
 $sqlQuery = "SELECT * FROM `products` WHERE `id` = '$id'";
 $sqlResult = $db->query($sqlQuery);
 
-if($sqlResult->num_rows > 0) 
+if($sqlResult->num_rows > 0)
 {
- 
+
   while($row = $sqlResult->fetch_assoc())
   {
     $name = $row["name"];
@@ -48,7 +48,7 @@ if(!empty($_POST)){
     <section class="products">
         <div class="product-card">
             <div class="product-image">
-             <img src="image/product-1.jpg"> 
+             <img src="image/product-1.jpg">
             </div>
             <div class="product-info">
                 <p class="title"><?php echo $name ?></p>
@@ -64,24 +64,26 @@ if(!empty($_POST)){
                     </div>
                 <p class="text-review">25 Reviews</p>
             </div></br></br>
+                <p>Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out and illustrated magazine and housed in a nice, glided frame.</p></br>
+
                 <p><?php echo $description?></p></br>
-                
+
                 <div class="div-size">
                 <p class="size">Size</p>
                 <p class="required">(required)</p></br></br>
                  </div>
-                 
+
                 <select class="select">
                     <option id="s">SMALL</option>
                     <option value="m">MEDIUM</option>
                     <option value="b">BIG</option>
-                    
+
                 </select></br></br>
                 <div class="div-quantity">
                 <input type="text" id="quantity" name="quantity" placeholder="1" maxlength="2">
                 <input type="submit" value="Add item to cart" class="button-cart">
                 </div></br>
-               
+
                 <p class="category">Category</p>
                 <p class="descriptions">Top and blouses</p> </br>
                 <p class="tags">Tags</p>
