@@ -21,7 +21,7 @@ if(!empty($_POST)){
       $_SESSION['role'] = $row['role'];
       break;
     }
-    header("Location:index.php");
+    header("Location:insertuser.php");
   }
 }
 ?>
