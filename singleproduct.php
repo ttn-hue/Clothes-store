@@ -3,7 +3,6 @@ session_start();
 include('includes/db_connection.php');
 $id = $_GET['id'];
 
-$email = $_SESSION['email'];
 $sqlQuery = "SELECT * FROM `products` WHERE `id` = '$id'";
 $sqlResult = $db->query($sqlQuery);
 
