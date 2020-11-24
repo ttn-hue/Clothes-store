@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('includes/db_connection.php');
+if(isset($_SESSION['email']) && $_SESSION['role'] == "admin"){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,3 +66,9 @@
     <?php include("includes/footer.php") ?>
 </body>
 </html>
+<?php
+}else{
+header('Location:login.php');
+exit();
+}
+?>

@@ -18,9 +18,10 @@ if(!empty($_POST)){
     while($row = $sqlResult->fetch_assoc())
     {
       $_SESSION['email'] = $row['email'];
+      $_SESSION['role'] = $row['role'];
       break;
     }
-    header("Location:index.php");
+    header("Location:insertuser.php");
   }
 }
 ?>

@@ -12,6 +12,7 @@
     <div class="logout">
     <img class="logout_image" src="image/logout.png" alt="logout_image" width="40px" height="50px">
         <p>Successfully logged out!</p>
+        <?php echo "Successfully logged out!" ?>
     </div>
   </main>
   <?php include("includes/footer.php") ?>
