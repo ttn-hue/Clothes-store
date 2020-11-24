@@ -42,7 +42,7 @@ h1 {
     line-height: 1.7;
     font-weight: 600;
     text-align: center;
-    padding: 50px 0 40px;
+    padding: 30px 0 50px;
 }
 
 h1::after {
@@ -55,9 +55,11 @@ h1::after {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     word-spacing: 1px;
     line-height: 1.7;
+    font-weight: 400;
+    padding: 20px 0 0;
 }
 
 h3 {
@@ -91,13 +93,28 @@ h3 {
     border: 1px solid #212529;
 }
 
+
+
 .btn:hover,
 .btn:active {
     background-color: #212529;
 }
 
 section {
-    padding: 50px 0;
+    padding: 50px 0 0;
+}
+
+input {
+    outline: none;
+    border: 1px solid #212529;
+    padding: 10px;
+    border-color: #bababa;
+    width: 100%;
+}
+
+label {
+    font-size: 1.6rem;
+    padding: 15px 0 5px;
 }
 
 input[type='submit']{
@@ -109,8 +126,16 @@ input[type='submit']{
     background-color: #212529;
 }
 
+select {
+    width: 100%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 10px 0;
+    outline: none;
+    border-color: #bababa;
+}
+
 input[type='submit']:hover {
-    border: 2px solid #212529;
     background-color: #212529;
 }
 
@@ -448,14 +473,13 @@ footer {
 .main {
     background-color: #FFFFFF;
     width: 400px;
-    height: 400px;
+    height: 420px;
     margin: 7em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .login {
-    padding-top: 40px;
     color: black;
     font-family: 'Jost', sans-serif;
     font-size: 1.9rem;
@@ -463,9 +487,9 @@ footer {
     font-size: 23px;
     margin: auto;
     width: 50%;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
-    padding-top: 50px;
+    margin-top: 10px;
 }
 
 .username{
@@ -487,7 +511,7 @@ footer {
     font-size: 1.6rem;
     font-weight: 500;
     background: url(../image/user.png) no-repeat right center;
-    background-size: 23px;
+    background-size: 28px;
 }
 
 .password {
@@ -514,7 +538,6 @@ footer {
 
 form.formSignIn {
     padding-top: 20px;
-    
 }
 
 .submit {
@@ -545,3 +568,366 @@ form.formSignIn {
         border-radius: 0px;
     }
 }
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+/*-------------------------------------------*/
+/* LOGOUT */
+/*-------------------------------------------*/
+
+.logout {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 100px;
+    border-radius: 1.2em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7em auto;
+    transition: 0.5s;
+}
+
+.logout p{
+    font-size: 30px;
+    padding-left: 15px;
+}
+
+/*-------------------------------------------*/
+/* SINGLE PRODUCT */
+/*-------------------------------------------*/
+  
+.products {
+    display: flex;
+     flex-wrap: wrap;
+ }
+ 
+ .product-card {
+     padding: 2%;
+     flex-grow: 2;
+     flex-basis: 16%;
+     display: flex;
+ }
+ 
+ .product-card {
+     flex: 1 16%;
+ }
+ 
+ .product-image img {
+ max-width: 100%;
+ display: flex;
+ }
+ 
+ .product-info {
+     margin-left: 150px;
+ }
+ 
+ @media (media-width: 920px) {
+     .product-card {
+         flex:  1 21%;
+     }
+ }
+ 
+ @media (max-width: 600px){
+     .product-card {
+         flex: 1 46%;
+     }
+ }
+ 
+ .buy {
+     padding: 5px;
+     text-align: center;
+     font-family: 'Jost', sans-serif;
+     margin-top: 10px;
+     left: 50%;
+     border: none;
+     border-radius: 4px;
+     font-size: 1.5rem;
+     letter-spacing: 2px;
+     color: white;
+     background-color: #bababa;
+     box-shadow: 0 4px 2px -2px gray;
+ }
+ 
+ .image_buy{
+     padding-left: 8px;
+ }
+ 
+ .checked {
+     color: orange;
+ }
+  .select{
+     padding: 5px;
+  }
+ 
+ .size{
+     float: left;
+ }
+ 
+ .required {
+     float: left;
+     margin-left: 10px;
+     color: gray;
+     font-size: 14px;
+     text-align: center;
+ }
+ 
+ .title{
+  font-size: 25px;
+  font-style: bold;
+ }
+ 
+ .real-price{
+     float: left;
+ }
+ 
+ .lowered {
+     float: left;
+     margin-left: 10px;
+     color: gray;
+     text-decoration: line-through;
+ }
+ 
+ .grade{
+ float: right;
+ display: flex;
+ align-items: center;
+ }
+ 
+ .stars{
+     padding-right: 10px;
+ }
+ 
+ .div-size {
+     display: flex;
+ }
+ 
+ .div-quantity {
+     display: flex;
+ }
+ 
+ .button-cart {
+     height: 40px;
+     background-color: black;
+     color: white;
+     width: 100%;
+     text-align: center;
+     font-family: 'Jost', sans-serif;
+     font-style: bold;
+     font-size: 18px;
+ }
+ 
+ .category {
+     font-style: bold;
+ }
+ 
+ .tags {
+     font-style: bold;
+ }
+ 
+ .descriptions {
+     color: gray;
+ }
+
+/*-------------------------------------------*/
+<<<<<<< HEAD
+/* ADMIN */
+/*-------------------------------------------*/
+
+#customers {
+    font-family: 'Jost', sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 30px;
+    font-size: 16px;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #adb5bd;
+    color: white;
+  }
+
+  #admin-container{
+    padding: 2%;
+     flex-grow: 2;
+     flex-basis: 16%;
+     display: flex;
+    }
+
+  #new-user {
+   font-size: 18px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .register-container {
+    padding: 16px;
+    background-color: white;
+    padding-top: 30px;
+}
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+.registerbtn {
+    background-color: #adb5bd;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-size: 14px;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+
+  b{
+      font-size: 14px;
+  }
+=======
+/* ORDER */
+/*-------------------------------------------*/
+.section-checkout {
+    padding-bottom: 100px;
+}
+
+.checkout-wrapper {
+    display: flex;
+}
+
+.checkout-form {
+    width: 60%;
+}
+
+.checkout-order {
+    width: 40%;
+    margin-left: 15%;
+}
+
+.checkout-form label, .checkout-form input {
+    display: block;
+}
+
+.fullname {
+    display: flex;
+    flex-direction: row;
+}
+
+.fullname label, .fullname input {
+  display: block;
+}
+
+.fullname .firstname, .fullname .lastname {
+    width: 45%;
+}
+
+.fullname .firstname {
+    margin-right: 5%;
+}
+
+.fullname .lastname {
+    margin-left: 5%;
+}
+
+.single-order {
+    display: flex;
+    padding: 20px 0 20px;
+}
+
+
+.single-order img {
+    width: 94px;
+    height: 112px;
+}
+
+.single-order ul {
+    padding-left: 20px;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.single-order ul li:first-child {
+    font-weight: 600;
+}
+
+.order-body {
+    padding: 20px 0;
+}
+
+.order-body ul {
+    list-style: none;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.order-body ul li {
+    padding: 20px 0;
+    font-size: 1.7rem;
+    border-bottom: 0.5px solid #dcdcdc;
+    ;
+}
+
+.order-body ul li:last-child {
+    border-bottom: none;
+}
+
+.order-body ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-btn {
+    padding: 15px !important;
+    width: 100%;
+    margin: 20px 0;
+    text-transform: none !important;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.7;
+    letter-spacing: 1px;
+}
+>>>>>>> develop

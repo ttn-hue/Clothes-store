@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<?php include('includes/head.php') ?>
+<html lang="en">
+<head>
+<?php include("includes/head.php") ?>
+</head>
 <body>
     <?php include('includes/nav.php') ?>
     <section class="section-breadcumb">
@@ -33,6 +36,6 @@
             </div>
         </div>
     </section>
-    <?php include('includes/footer.php') ?>
+    <?php include("includes/footer.php") ?>
 </body>
 </html>
