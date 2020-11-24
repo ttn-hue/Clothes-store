@@ -38,7 +38,7 @@
                             ?>
                                 <li>
                                     <div class="product-thumbnail">
-                                        <?php echo "<a href='singleproduct.php?id=".$row['id'] ?>
+                                        <a href='<?php echo "singleproduct.php?id=".$row['id'] ?>'>
                                             <img src="image/product-1.jpg" alt="product image">
                                             <p class="product-name"><?php echo $row['name'] ?></p>
                                             <p class="product-price"><?php echo "$".$row['price']; ?></p>
