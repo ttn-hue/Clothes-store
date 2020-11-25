@@ -4,15 +4,6 @@ include('includes/db_connection.php');
 // if(isset($_SESSION['email']) && ($_SESSION['role'] == "admin" || $_SESSION['role'] == "manager" || $_SESSION['role'] == "user")){
     if(true){
 
-
-        /*$subtotal = 0;
-        $shoppingcart = $_SESSION['shoppingcart'];
-        foreach($shoppingcart as $object)
-        {
-        $price = number_format((float)$object->price, 2, '.', '');
-        $subtotal += (float)$object->quantity * $price;
-       }*/
-
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -22,6 +13,7 @@ include('includes/db_connection.php');
         $(document).ready(function(){
                 // update tax value by select province
                 $('#proviceSelect').on('change', function(){
+                    var province = $('#proviceSelect option:selected').text();
                     var province = $('#proviceSelect').val();
                     var subtotal = $('#subtotal').text().replace('$', '');
                     subtotal = parseFloat(subtotal);
@@ -32,6 +24,7 @@ include('includes/db_connection.php');
                         data : {
                             province : province,
                             subtotal : subtotal,
+                            //shopingcart : shoppingcart
                         },
                         success : function(result){
                             $('#tax').html(result);
@@ -135,6 +128,18 @@ include('includes/db_connection.php');
                                     <input type="text" name="city" id="city" placeholder="City">
                                     <label for="province">Province</label>
                                     <select name="province" id="proviceSelect">
+                                    <!--<option value="ontario">Ontario</option>
+                                        <option value="manitoba">Manitoba</option>
+                                        <option value="british columbia">British Columbia</option>
+                                        <option value="quebec">Quebec</option>
+                                        <option value="alberta">Alberta</option>
+                                        <option value="saskatchewan">Saskatchewan</option>
+                                        <option value="newfoundland and labrador">Newfoundland and Labrador</option>
+                                        <option value="prince edward island">Prince Edward Island</option>
+                                        <option value="nova scotia">Nova Scotia</option>
+                                        <option value="nunavut">Nunavut</option>
+                                        <option value="northwest">Northwest</option>
+                                        <option value="yukon">Yukon</option>!-->
                                         <option value="ON">Ontario</option>
                                         <option value="MB">Manitoba</option>
                                         <option value="BC">British Columbia</option>
