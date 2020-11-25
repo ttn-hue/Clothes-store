@@ -2,9 +2,6 @@
     session_start();
     include('includes/db_connection.php');
 
-     $province = "MB";
-     $subtotal = "89.00";
-
     $province = $_POST['province'];
     $subtotal = $_POST['subtotal'];
     

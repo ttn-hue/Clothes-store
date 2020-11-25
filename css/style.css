@@ -181,7 +181,7 @@ nav .wrapper {
 }
 
 .main-nav-left {
-    width: 35%;
+    width: 40%;
     display: flex;
 }
 
@@ -194,7 +194,7 @@ nav .wrapper {
 
 
 .main-nav-right {
-    width: 35%;
+    width: 40%;
     display: flex;
     justify-content: flex-end;
 }
@@ -207,7 +207,7 @@ nav .wrapper {
 }
 
 .logo-middle {
-    width: 30%;
+    width: 20%;
 }
 
 .logo-middle .logo-branch {
@@ -934,4 +934,62 @@ hr {
     font-weight: 600;
     line-height: 1.7;
     letter-spacing: 1px;
+}
+
+
+/*-------------------------------------------*/
+/* RECEIPT */
+/*-------------------------------------------*/
+.section-receipt {
+    padding: 50px 0;
+    font-size: 1.4rem;
+    margin: 0 auto;
+}
+
+#receipt-wrapper {
+    width: 300px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#receipt-wrapper h2 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.receipt-header {
+    padding: 10px 0;
+}
+
+.receipt-header ul {
+    list-style: none;
+}
+
+th, td {
+    text-align: center;
+    /* padding: 5px 10px 5px 0; */
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+
+
+/*-------------------------------------------*/
+/* ORDER MANAGEMENT */
+/*-------------------------------------------*/
+
+.selected-products {
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+}
+
+#list-order-wrapper table {
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+
+.section-list-order {
+    padding: 50px 0 100px;
 }
