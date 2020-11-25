@@ -11,6 +11,7 @@ if($sqlResult->num_rows > 0)
 
   while($row = $sqlResult->fetch_assoc())
   {
+    $id = $row["id"];  
     $name = $row["name"];
     $description = $row["description"];
     $price = $row["price"];
@@ -20,7 +21,7 @@ if($sqlResult->num_rows > 0)
 }
 
 if(!empty($_POST)){
- $singleItem = (object)['name' => $name, 'description' => $description, 'price' => $price, 'quantity' => $_POST["quantity"]];
+ $singleItem = (object)['id' => $id,'name' => $name, 'description' => $description, 'price' => $price, 'quantity' => $_POST["quantity"]];
     $itemList = [];
     if(!$_SESSION['shoppingcart']){
         array_push($itemList, $singleItem);
