@@ -1,10 +1,8 @@
 <?php
 session_start();
 include('includes/db_connection.php');
-if(isset($_SESSION['shoppingcart']))
-{
-    $list = $_SESSION['shoppingcart'];
-}
+
+$list = $_SESSION['shoppingcart'];
 
 ?>
 <!DOCTYPE html>
