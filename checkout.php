@@ -1,7 +1,52 @@
+<?php
+$subtotal = 0.00;
+$tax = 0.00;
+$total = 0.00;
+
+//$shoppingcart = $_SESSION['shoppingcart'];
+//foreach($shoppingcart as $object)
+{
+// get subtotal amount
+//$subtotal += $object->quantity * $object->price;
+                        }
+// calculate tax
+//$tax = calculateTax($subtotal, $province);
+// get total amount
+$total += $subtotal + $tax;
+
+// function for calculating taxes
+ //function calculateTaxt($subtotal, $province)
+ //{
+    
+ //}
+ //echo "Works";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <?php include("includes/head.php") ?>
+<script>
+    $('#proviceSelect').on('change', function(){
+                    var province = $('#proviceSelect option:selected').text();
+                    var subtotal = $('#subtotal').text().replace('$', '');
+                    subtotal = parseFloat(subtotal);
+
+                    // ajax call
+                    $.ajax({
+                        type : 'POST',
+                        url : 'ajaxcheckout.php', // file for tax processing
+                        data : {
+                            province : province,
+                            subtotal : subtotal
+                        },
+                        success : function(result){
+                            $('#tax').html(result)
+                        }
+                    })
+
+                });
+
+  </script>
 </head>
 <body>
     <?php include("includes/nav.php") ?>
@@ -21,7 +66,7 @@
             </div>
         </div>
         <div class="row">
-            <form action="" method="POST">
+            <form name="checkoutform" id="checkoutform" action="" method="POST">
                 <div class="checkout-wrapper">
                     <div class="checkout-form">
                         <div class="billing-details">
@@ -48,18 +93,18 @@
                             <input type="text" name="city" id="city" placeholder="City">
                             <label for="province">Province</label>
                             <select name="province">
-                                <option value="ontario">Ontario</option>
-                                <option value="manitoba">Manitoba</option>
-                                <option value="british columbia">British Columbia</option>
-                                <option value="quebec">Quebec</option>
-                                <option value="alberta">Alberta</option>
-                                <option value="saskatchewan">Saskatchewan</option>
-                                <option value="newfoundland and labrador">Newfoundland and Labrador</option>
-                                <option value="prince edward island">Prince Edward Island</option>
-                                <option value="nova scotia">Nova Scotia</option>
-                                <option value="nunavut">Nunavut</option>
-                                <option value="northwest">Northwest</option>
-                                <option value="yukon">Yukon</option>
+                                <option value="ON">Ontario</option>
+                                <option value="MB">Manitoba</option>
+                                <option value="BC">British Columbia</option>
+                                <option value="QC">Quebec</option>
+                                <option value="AB">Alberta</option>
+                                <option value="SK">Saskatchewan</option>
+                                <option value="NL">Newfoundland and Labrador</option>
+                                <option value="PE">Prince Edward Island</option>
+                                <option value="NS">Nova Scotia</option>
+                                 <option value="NU">Nunavut</option>
+                                <option value="NT">Northwest</option>
+                                <option value="YT">Yukon</option>
                             </select>
                         </div>
                         <div class="payment-details">
@@ -97,7 +142,7 @@
                         </div>
                         <div class="order-body">
                             <ul>
-                                <li><span>Subtotal</span><span>$89.00</span></li>
+                                <li><span>Subtotal</span><span id="subtotal">$89.00</span></li>
                                 <li><span>Tax</span><span>$8.00</span></li>
                                 <li><span>Total</span><span>$97.00</span></li>
                             </ul>
