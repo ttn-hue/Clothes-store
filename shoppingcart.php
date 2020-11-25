@@ -2,8 +2,9 @@
 session_start();
 include('includes/db_connection.php');
 
-$list = $_SESSION['shoppingcart'];
-
+if(isset($_SESSION['shoppingcart'])) {
+    $list = $_SESSION['shoppingcart'];
+}
 
 ?>
 <!DOCTYPE html>

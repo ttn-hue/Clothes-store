@@ -1,8 +1,8 @@
 <?php
 session_start();
 include('includes/db_connection.php');
-// if(isset($_SESSION['email']) && ($_SESSION['role'] == "admin" || $_SESSION['role'] == "manager" || $_SESSION['role'] == "user")){
-    if(true){
+if(isset($_SESSION['email']))
+{
     ?>
         <!DOCTYPE html>
         <html lang="en">
