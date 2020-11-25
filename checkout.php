@@ -14,7 +14,6 @@ if(isset($_SESSION['email'])){ // authentification
                 var province = $('#proviceSelect option:selected').val();
                 var subtotal = $('#subtotal').text().replace('$', '');
 
-                // var shoppingcart = $_SESSION['shoppingcart'];
                 // ajax call
                 $.ajax({
                     type : 'POST',
@@ -22,12 +21,10 @@ if(isset($_SESSION['email'])){ // authentification
                     data : {
                         province : province,
                         subtotal : subtotal,
-                        // shopingcart : shoppingcart
                     },
                     success : function(result){
                         $('#tax').html(`$${result}`);
                         var subtotal = $('#subtotal').text().replace('$', '');
-                        // alert(subtotal);
                         var subtotal = parseFloat(subtotal);
                         var tax = parseFloat(result);
                         var total = subtotal + tax;
