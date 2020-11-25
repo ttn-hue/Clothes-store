@@ -972,3 +972,24 @@ th, td {
     padding: 5px;
     border-bottom: 1px solid black;
 }
+
+
+
+/*-------------------------------------------*/
+/* ORDER MANAGEMENT */
+/*-------------------------------------------*/
+
+.selected-products {
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+}
+
+#list-order-wrapper table {
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+
+.section-list-order {
+    padding: 50px 0 100px;
+}
