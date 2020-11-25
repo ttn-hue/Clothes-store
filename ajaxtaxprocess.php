@@ -1,14 +1,14 @@
 <?php
-    
+
     include('includes/db_connection.php');
 
     //uncomment when neccesary
-    //$province = $_POST['province'];
-    //$subtotal = $_POST['subtotal'];
+    $province = $_POST['province'];
+    $subtotal = $_POST['subtotal'];
 
     //delete when necessary
-    $province = "MB";
-    $subtotal = "89.00";
+    // $province = "MB";
+    // $subtotal = "89.00";
 
     $tax = calculateTax($subtotal, $province);
 
@@ -18,11 +18,11 @@
 
     $taxTD = number_format((float)$tax, 2, '.', '');
     $totalTD = number_format((float)$total, 2, '.', '');
-    
+
     //delete when necessary
-    echo "subtotal $$subtotal <br>";
-    echo "taxes $$taxTD <br>";
-    echo "total $$totalTD <br>";
+    // echo "subtotal $$subtotal <br>";
+    echo "$$taxTD";
+    // echo "total $$totalTD <br>";
 
     function calculateTax($subtotal, $province)
      {

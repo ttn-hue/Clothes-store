@@ -11,7 +11,7 @@ if($sqlResult->num_rows > 0)
 
   while($row = $sqlResult->fetch_assoc())
   {
-    $id = $row["id"];  
+    $id = $row["id"];
     $name = $row["name"];
     $description = $row["description"];
     $price = $row["price"];
