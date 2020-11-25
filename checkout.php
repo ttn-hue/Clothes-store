@@ -15,15 +15,14 @@ include('includes/db_connection.php');
                 $('#proviceSelect').on('change', function(){
                     var province = $('#proviceSelect option:selected').text();
                     var subtotal = $('#subtotal').text().replace('$', '');
-                    subtotal = parseFloat(subtotal);
 
                     // ajax call
                     $.ajax({
                         type : 'POST',
                         url : 'ajaxtaxprocess.php', // file for tax processing
                         data : {
-                            province : province,
-                            subtotal : subtotal
+                            'province' : province,
+                            'subtotal' : subtotal
                         },
                         success : function(result){
                             $('#tax').html(result)
@@ -32,6 +31,7 @@ include('includes/db_connection.php');
 
                 });
 
+                // checkout submit with ajax
                 $('#checkoutForm').on('submit', function(e){
                     e.preventDefault();
                     // get variables
@@ -47,13 +47,10 @@ include('includes/db_connection.php');
                     var expiryMonth = $('#expirymonth').val();
                     var expiryYear = $('#expiryyear').val();
                     var subtotal = $('#subtotal').text().replace('$', '');
-                    subtotal = parseFloat(subtotal);
                     var tax = $('#tax').text().replace('$', '');
-                    tax = parseFloat(tax);
                     var total = $('#total').text().replace('$', '');
-                    total = parseFloat(total);
 
-                    // console.log(subtotal + " " + tax + " " + total + " " + province + " " + city + " " + address + " " + postcode + " " + phone + " " + email + " " + lastname + " " + firstname + " " + cardNumber + " " + expiryMonth + " " + expiryYear)
+                    // console.log(subtotal + " " + tax + " " + total + " " + province + " " + city + " " + address + " " + postcode + " " + phone + " " + email + " " + lastname + " " + firstname + " " + cardNumber + " " + expiryMonth + " " + expiryYear);
 
                     // ajax call
                     $.ajax({
@@ -76,9 +73,7 @@ include('includes/db_connection.php');
                             'total' : total
                         },
                         success : function(result) {
-                            // if (result) {
-                            //     window.location.href = 'receipt.php';
-                            // }
+                            // window.location.href = 'receipt.php';
                             $('#formResult').html(result);
                         }
                     });
@@ -167,7 +162,7 @@ include('includes/db_connection.php');
                                                     <img src="image/product-1.jpg" alt="order item image">
                                                     <ul>
                                                         <li><?php echo $object->name; ?></li>
-                                                        <li><?php echo "$".$object->price; ?></li>
+                                                        <li><?php echo "$".number_format((float)$object->price, 2, '.', ''); ?></li>
                                                         <li><br></li>
                                                         <li>Quantity: <?php echo $object->quantity; ?></li>
                                                         <li>Size: M</li>
@@ -189,13 +184,15 @@ include('includes/db_connection.php');
                                             foreach($shoppingcart as $object)
                                             {
                                                 // get subtotal amount
-                                                $subtotal += (double)$object->quantity * $object->price;
+                                                $price = number_format((float)$object->price, 2, '.', '');
+                                                $subtotal += (float)$object->quantity * $price;
                                             }
-
+                                            $subtotal = number_format((float)$subtotal, 2, '.', '');
                                             $total += $subtotal + $tax;
+                                            $total = number_format((float)$total, 2, '.', '');
                                         ?>
                                             <li><span>Subtotal</span><span id="subtotal"><?php echo "$".$subtotal; ?></span></li>
-                                            <li><span>Tax</span><span id="tax"><?php echo "$".$tax; ?></span></li>
+                                            <li><span>Tax</span><span id="tax"><?php echo "$".number_format((float)$tax, 2, '.', ''); ?></span></li>
                                             <li><span>Total</span><span id="total"><?php echo "$".$total; ?></span></li>
                                             <?php
                                         ?>

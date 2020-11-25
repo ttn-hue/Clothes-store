@@ -25,7 +25,7 @@
 
     // insert customer card info
     $sqlQueryCard = "
-        INSERT INTO `cards` (`id`, `card-number`, `expiry-month`, `expiry-year`) VALUES (NULL, '$cardNumber', '$expiryMonth', '$expiryYear');
+        INSERT INTO `cards` (`card-number`, `expiry-month`, `expiry-year`) VALUES ('$cardNumber', '$expiryMonth', '$expiryYear');
     ";
 
     $sqlResultCard = $db->query($sqlQueryCard);
@@ -33,7 +33,7 @@
 
     if(!$sqlResultCard)
     {
-        exit($db->error);
+        exit($db->error." card");
     }
 
     // insert customer infor
@@ -41,7 +41,7 @@
         INSERT INTO `customers`
         (`firstname`, `lastname`, `email`, `phone`, `address`, `postcode`, `city`, `province`, `cardId`)
         VALUE
-        ('$firstname', '$lastname', '$email', '$phone', '$address', '$city', '$postcode', '$province', `$last_card_id`);
+        ('$firstname', '$lastname', '$email', '$phone', '$address', '$postcode', '$city', '$province', '$last_card_id');
     ";
 
     $sqlResultCustomer = $db->query($sqlQueryCustomer);
@@ -49,7 +49,7 @@
 
     if(!$sqlQueryCustomer)
     {
-        exit($db->error);
+        exit($db->error." customer");
     }
 
     // insert order infor
@@ -62,7 +62,7 @@
 
     if(!$sqlResultOrder)
     {
-        exit($db->error);
+        exit($db->error." order");
     }
 
     // create sql query string
@@ -77,8 +77,9 @@
 
     if(!$sqlResultOrderProduct)
     {
-        exit($db->error);
+        exit($db->error." order_product");
     }
 
     // return nothing
+    echo "success";
 ?>
