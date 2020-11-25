@@ -9,20 +9,23 @@ include('includes/db_connection.php');
         <head>
         <?php include("includes/head.php") ?>
         <script>
-            $(document).ready(function(){
-
+        $(document).ready(function(){
                 // update tax value by select province
                 $('#proviceSelect').on('change', function(){
                     var province = $('#proviceSelect option:selected').text();
                     var subtotal = $('#subtotal').text().replace('$', '');
 
-                    // ajax call
+                   
+                    var shoppingcart = $_SESSION['shoppingcart'];
+
+                   // ajax call
                     $.ajax({
                         type : 'POST',
                         url : 'ajaxtaxprocess.php', // file for tax processing
                         data : {
-                            'province' : province,
-                            'subtotal' : subtotal
+                            province : province,
+                            subtotal : subtotal,
+                            shopingcart : shoppingcart
                         },
                         success : function(result){
                             $('#tax').html(result)

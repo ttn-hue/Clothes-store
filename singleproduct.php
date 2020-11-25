@@ -21,7 +21,10 @@ if($sqlResult->num_rows > 0)
 }
 
 if(!empty($_POST)){
- $singleItem = (object)['id' => $id,'name' => $name, 'description' => $description, 'price' => $price, 'quantity' => $_POST["quantity"]];
+
+$quantity = $_POST["quantity"];
+
+ $singleItem = (object)['id' => $id,'name' => $name, 'description' => $description, 'price' => $price, 'quantity' => $quantity];
     $itemList = [];
     if(!$_SESSION['shoppingcart']){
         array_push($itemList, $singleItem);
