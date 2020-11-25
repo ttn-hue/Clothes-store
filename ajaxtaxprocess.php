@@ -2,16 +2,6 @@
     session_start();
     include('includes/db_connection.php');
 
-    //uncomment when neccesary
-    //$province = $_POST['province'];
-    //$subtotal = $_POST['subtotal'];
-    //$shoppingcart = $_POST['shoppingcart'];
-
-    //echo " imprime esto<br>";
-    //echo "$subtotal<br>";
-    //echo " $shoppingcart<br>";
-
-    //delete when necessary
      $province = "MB";
      $subtotal = "89.00";
 
