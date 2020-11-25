@@ -81,5 +81,5 @@
     }
 
     // return nothing
-    echo "success";
+    echo $last_order_id;
 ?>

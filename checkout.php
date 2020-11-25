@@ -73,8 +73,8 @@ include('includes/db_connection.php');
                             'total' : total
                         },
                         success : function(result) {
-                            // window.location.href = 'receipt.php';
-                            $('#formResult').html(result);
+                            localStorage.setItem('order_id', result);
+                            window.location.href = 'receipt.php';
                         }
                     });
                 });
