@@ -14,7 +14,7 @@ if(isset($_SESSION['email'])){ // authentification
                 var province = $('#proviceSelect option:selected').text();
                 var subtotal = $('#subtotal').text().replace('$', '');
 
-
+              
                 var shoppingcart = $_SESSION['shoppingcart'];
 
                 // ajax call

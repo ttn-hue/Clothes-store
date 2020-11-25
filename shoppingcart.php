@@ -6,7 +6,6 @@ if(isset($_SESSION['shoppingcart']))
     $list = $_SESSION['shoppingcart'];
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

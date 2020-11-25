@@ -181,7 +181,7 @@ nav .wrapper {
 }
 
 .main-nav-left {
-    width: 35%;
+    width: 40%;
     display: flex;
 }
 
@@ -194,7 +194,7 @@ nav .wrapper {
 
 
 .main-nav-right {
-    width: 35%;
+    width: 40%;
     display: flex;
     justify-content: flex-end;
 }
@@ -207,7 +207,7 @@ nav .wrapper {
 }
 
 .logo-middle {
-    width: 30%;
+    width: 20%;
 }
 
 .logo-middle .logo-branch {
