@@ -12,7 +12,6 @@
             </div>
             <ul class="main-nav-right">
                 <li><a href="login.php">Sign in</a></li>
-               <!-- <li><a href="#">Sign up</a></li> -->
                <li><a href="insertuser.php">Users</a></li>
                 <li><a href="logout.php">Log out</a></li>
                 <li><a href="#"><i class="fa fa-search fa-ms"></i></a></li>
