@@ -20,9 +20,8 @@ if($sqlResult->num_rows > 0)
   }
 }
 
-if(!empty($_POST)){
-
-$quantity = $_POST["quantity"];
+if(!empty($_POST["quantity"])){
+    $quantity = $_POST["quantity"];
 
  $singleItem = (object)['id' => $id,'name' => $name, 'description' => $description, 'price' => $price, 'quantity' => $quantity];
     $itemList = [];
@@ -36,10 +35,11 @@ $quantity = $_POST["quantity"];
 
         $_SESSION['shoppingcart'] = $itemList;
     }
- header("Location:shoppingcart.php");
+        header("Location:shoppingcart.php");
 }
 
-?>
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +94,17 @@ $quantity = $_POST["quantity"];
             </div>
         </div>
  </section>
- <p id="errors"></p>
+ <p id="errors">
+ <?php
+ if(!empty($_POST)){
+    $errors = ''; 
+    if (empty($_POST['quantity'])) {
+        $errors = 1;
+        echo "You left quantity field empty.";
+ }
+} 
+ ?>
+ </p>
 </form>
     <?php include("includes/footer.php") ?>
 </body>
