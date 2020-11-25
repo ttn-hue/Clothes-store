@@ -3,7 +3,17 @@ session_start();
 include('includes/db_connection.php');
 // if(isset($_SESSION['email']) && ($_SESSION['role'] == "admin" || $_SESSION['role'] == "manager" || $_SESSION['role'] == "user")){
     if(true){
-    ?>
+
+
+        /*$subtotal = 0;
+        $shoppingcart = $_SESSION['shoppingcart'];
+        foreach($shoppingcart as $object)
+        {
+        $price = number_format((float)$object->price, 2, '.', '');
+        $subtotal += (float)$object->quantity * $price;
+       }*/
+
+        ?>
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -12,12 +22,9 @@ include('includes/db_connection.php');
         $(document).ready(function(){
                 // update tax value by select province
                 $('#proviceSelect').on('change', function(){
-                    var province = $('#proviceSelect option:selected').text();
+                    var province = $('#proviceSelect').val();
                     var subtotal = $('#subtotal').text().replace('$', '');
-
-                   
-                    var shoppingcart = $_SESSION['shoppingcart'];
-
+                    subtotal = parseFloat(subtotal);
                    // ajax call
                     $.ajax({
                         type : 'POST',
@@ -25,11 +32,10 @@ include('includes/db_connection.php');
                         data : {
                             province : province,
                             subtotal : subtotal,
-                            shopingcart : shoppingcart
                         },
                         success : function(result){
-                            $('#tax').html(result)
-                        }
+                            $('#tax').html(result);
+                        },
                     })
 
                 });
@@ -78,7 +84,7 @@ include('includes/db_connection.php');
                         success : function(result) {
                             // window.location.href = 'receipt.php';
                             $('#formResult').html(result);
-                        }
+                         }
                     });
                 });
             });
@@ -129,18 +135,18 @@ include('includes/db_connection.php');
                                     <input type="text" name="city" id="city" placeholder="City">
                                     <label for="province">Province</label>
                                     <select name="province" id="proviceSelect">
-                                        <option value="ontario">Ontario</option>
-                                        <option value="manitoba">Manitoba</option>
-                                        <option value="british columbia">British Columbia</option>
-                                        <option value="quebec">Quebec</option>
-                                        <option value="alberta">Alberta</option>
-                                        <option value="saskatchewan">Saskatchewan</option>
-                                        <option value="newfoundland and labrador">Newfoundland and Labrador</option>
-                                        <option value="prince edward island">Prince Edward Island</option>
-                                        <option value="nova scotia">Nova Scotia</option>
-                                        <option value="nunavut">Nunavut</option>
-                                        <option value="northwest">Northwest</option>
-                                        <option value="yukon">Yukon</option>
+                                        <option value="ON">Ontario</option>
+                                        <option value="MB">Manitoba</option>
+                                        <option value="BC">British Columbia</option>
+                                        <option value="QC">Quebec</option>
+                                        <option value="AB">Alberta</option>
+                                        <option value="SK">Saskatchewan</option>
+                                        <option value="NL">Newfoundland and Labrador</option>
+                                        <option value="PE">Prince Edward Island</option>
+                                        <option value="NS">Nova Scotia</option>
+                                        <option value="NU">Nunavut</option>
+                                        <option value="NT">Northwest</option>
+                                        <option value="YT">Yukon</option>
                                     </select>
                                 </div>
                                 <div class="payment-details">

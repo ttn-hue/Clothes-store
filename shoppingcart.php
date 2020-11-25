@@ -2,11 +2,6 @@
 session_start();
 include('includes/db_connection.php');
 
-$list = $_SESSION['shoppingcart'];
-
-print_r($list);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
