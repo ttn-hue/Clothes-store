@@ -15,7 +15,7 @@ include('includes/db_connection.php');
                     var province = $('#proviceSelect option:selected').text();
                     var subtotal = $('#subtotal').text().replace('$', '');
 
-                   
+
                     var shoppingcart = $_SESSION['shoppingcart'];
 
                    // ajax call
