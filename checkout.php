@@ -11,11 +11,8 @@ if(isset($_SESSION['email'])){ // authentification
     $(document).ready(function(){
             // update tax value by select province
             $('#proviceSelect').on('change', function(){
-                var province = $('#proviceSelect option:selected').text();
+                var province = $('#proviceSelect option:selected').val();
                 var subtotal = $('#subtotal').text().replace('$', '');
-
-              
-                var shoppingcart = $_SESSION['shoppingcart'];
 
                 // ajax call
                 $.ajax({
@@ -24,10 +21,16 @@ if(isset($_SESSION['email'])){ // authentification
                     data : {
                         province : province,
                         subtotal : subtotal,
-                        shopingcart : shoppingcart
                     },
                     success : function(result){
-                        $('#tax').html(result)
+                        $('#tax').html(`$${result}`);
+                        var subtotal = $('#subtotal').text().replace('$', '');
+                        var subtotal = parseFloat(subtotal);
+                        var tax = parseFloat(result);
+                        var total = subtotal + tax;
+
+                        $('#total').html(`$${total}`);
+
                     }
                 })
 
@@ -128,18 +131,19 @@ if(isset($_SESSION['email'])){ // authentification
                                 <input type="text" name="city" id="city" placeholder="City">
                                 <label for="province">Province</label>
                                 <select name="province" id="proviceSelect">
-                                    <option value="ontario">Ontario</option>
-                                    <option value="manitoba">Manitoba</option>
-                                    <option value="british columbia">British Columbia</option>
-                                    <option value="quebec">Quebec</option>
-                                    <option value="alberta">Alberta</option>
-                                    <option value="saskatchewan">Saskatchewan</option>
-                                    <option value="newfoundland and labrador">Newfoundland and Labrador</option>
-                                    <option value="prince edward island">Prince Edward Island</option>
-                                    <option value="nova scotia">Nova Scotia</option>
-                                    <option value="nunavut">Nunavut</option>
-                                    <option value="northwest">Northwest</option>
-                                    <option value="yukon">Yukon</option>
+                                    <option>Select</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="AB">Alberta</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="NS"> Scotia</option>
+                                    <option value="NU">Nunavut</option>
+                                    <option value="NT">Northwest</option>
+                                    <option value="YT">Yukon</option>
                                 </select>
                             </div>
                             <div class="payment-details">
@@ -194,7 +198,7 @@ if(isset($_SESSION['email'])){ // authentification
                                         $total = number_format((float)$total, 2, '.', '');
                                     ?>
                                         <li><span>Subtotal</span><span id="subtotal"><?php echo "$".$subtotal; ?></span></li>
-                                        <li><span>Tax</span><span id="tax"><?php echo "$".number_format((float)$tax, 2, '.', ''); ?></span></li>
+                                        <li><span>Tax</span><span id="tax">$0.00</span></li>
                                         <li><span>Total</span><span id="total"><?php echo "$".$total; ?></span></li>
                                         <?php
                                     ?>
