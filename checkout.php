@@ -218,6 +218,7 @@ if(isset($_SESSION['email'])){ // authentification
     </html>
 <?php
 } else {
+    $_SESSION["back"] = "checkout";
     header('Location:login.php');
     exit();
 }

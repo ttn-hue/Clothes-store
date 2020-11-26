@@ -21,7 +21,16 @@ if(!empty($_POST)){
       $_SESSION['role'] = $row['role'];
       break;
     }
-    header("Location:checkout.php");
+    
+    if($_SESSION["back"] == "order"){
+      header("Location:ordermanager.php");
+    }else if($_SESSION["back"] == "checkout"){
+      header("Location:checkout.php");
+    }else if($_SESSION["back"] == "insertuser")
+    header("Location:insertuser.php");
+    else{
+      header("Location:login.php");
+    }
   }
 }
 ?>

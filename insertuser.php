@@ -68,6 +68,7 @@ if(isset($_SESSION['email']) && $_SESSION['role'] == "admin"){
 </html>
 <?php
 }else{
+$_SESSION["back"] = "insertuser";
 header('Location:login.php');
 exit();
 }
