@@ -14,7 +14,13 @@
                 <li><a href="ordermanager.php">Orders</a></li>
                 <li><a href="login.php">Sign in</a></li>
                <li><a href="insertuser.php">Users</a></li>
-                <li><a href="logout.php">Log out</a></li>
+               <?php
+                if(isset($_SESSION['email']))
+                {
+                    echo '<li><a href="logout.php">Log out</a></li>';
+                }
+
+               ?>
                 <li><a href="insertuser.php"><i class="fa fa-user fa-ms"></i></a></li>
                 <li><a href="shoppingcart.php"><i class="fa fa-shopping-cart fa-ms"></i></a></li>
             </ul>
