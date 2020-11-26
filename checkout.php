@@ -55,8 +55,6 @@ if(isset($_SESSION['email'])){ // authentification
                 var tax = $('#tax').text().replace('$', '');
                 var total = $('#total').text().replace('$', '');
 
-                // console.log(subtotal + " " + tax + " " + total + " " + province + " " + city + " " + address + " " + postcode + " " + phone + " " + email + " " + lastname + " " + firstname + " " + cardNumber + " " + expiryMonth + " " + expiryYear);
-
                 // ajax call
                 $.ajax({
                     type    : 'POST',
@@ -90,9 +88,9 @@ if(isset($_SESSION['email'])){ // authentification
         <?php include("includes/nav.php") ?>
         <section class="section-breadcumb">
             <div class="row">
-                <span><a href="#">Home</a></span>
+                <span><a href="index.php">Home</a></span>
                 <span><i class="fa fa-angle-right fa-lg"></i></span>
-                <span><a href="#">Product</a></span>
+                <span><a href="singleproduct.php">Product</a></span>
                 <span><i class="fa fa-angle-right fa-lg"></i></span>
                 <span>Check out</span>
             </div>
@@ -160,25 +158,22 @@ if(isset($_SESSION['email'])){ // authentification
                             <h2>Order Items</h2>
                             <div class="order-item-list">
                                 <?php
-                                    if(isset($_POST['shoppingcart']))
+                                    $shoppingcart = $_SESSION['shoppingcart'];
+                                    foreach($shoppingcart as $object)
                                     {
-                                        $shoppingcart = $_SESSION['shoppingcart'];
-                                        foreach($shoppingcart as $object)
-                                        {
-                                            ?>
-                                                <div class="single-order">
-                                                    <img src="image/product-1.jpg" alt="order item image">
-                                                    <ul>
-                                                        <li><?php echo $object->name; ?></li>
-                                                        <li><?php echo "$".number_format((float)$object->price, 2, '.', ''); ?></li>
-                                                        <li><br></li>
-                                                        <li>Quantity: <?php echo $object->quantity; ?></li>
-                                                        <li>Size: M</li>
-                                                        <li>Color: Red</li>
-                                                    </ul>
-                                                </div>
-                                            <?php
-                                        }
+                                        ?>
+                                            <div class="single-order">
+                                                <img src="image/product-1.jpg" alt="order item image">
+                                                <ul>
+                                                    <li><?php echo $object->name; ?></li>
+                                                    <li><?php echo "$".number_format((float)$object->price, 2, '.', ''); ?></li>
+                                                    <li><br></li>
+                                                    <li>Quantity: <?php echo $object->quantity; ?></li>
+                                                    <li>Size: M</li>
+                                                    <li>Color: Red</li>
+                                                </ul>
+                                            </div>
+                                        <?php
                                     }
                                 ?>
                             </div>
@@ -188,19 +183,16 @@ if(isset($_SESSION['email'])){ // authentification
                                         $subtotal = 0.00;
                                         $tax = 0.00;
                                         $total = 0.00;
-                                        if(isset($_POST['shoppingcart']))
+                                        $shoppingcart = $_SESSION['shoppingcart'];
+                                        foreach($shoppingcart as $object)
                                         {
-                                            $shoppingcart = $_SESSION['shoppingcart'];
-                                            foreach($shoppingcart as $object)
-                                            {
-                                                // get subtotal amount
-                                                $price = number_format((float)$object->price, 2, '.', '');
-                                                $subtotal += (float)$object->quantity * $price;
-                                            }
-                                            $subtotal = number_format((float)$subtotal, 2, '.', '');
-                                            $total += $subtotal + $tax;
-                                            $total = number_format((float)$total, 2, '.', '');
+                                            // get subtotal amount
+                                            $price = number_format((float)$object->price, 2, '.', '');
+                                            $subtotal += (float)$object->quantity * $price;
                                         }
+                                        $subtotal = number_format((float)$subtotal, 2, '.', '');
+                                        $total += $subtotal + $tax;
+                                        $total = number_format((float)$total, 2, '.', '');
 
                                     ?>
                                         <li><span>Subtotal</span><span id="subtotal"><?php echo "$".$subtotal; ?></span></li>

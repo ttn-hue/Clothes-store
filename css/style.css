@@ -153,8 +153,8 @@ a:link, a:visited {
     font-size: 1.6rem;
 }
 
-.logo-branch {
-    font-size: 2.8rem;
+.logo-branch a:link, .logo-branch a:visited {
+    font-size: 2.8rem !important;
     font-weight: 800;
     padding: 5px 0;
 }

@@ -16,7 +16,7 @@ if(isset($_SESSION['shoppingcart']))
     <?php include('includes/nav.php') ?>
     <section class="section-breadcumb">
         <div class="row">
-            <span>Home</span>
+            <span><a href="index.php">Home</a></span>
             <span><i class="fa fa-angle-right fa-lg"></i></span>
             <span>Shopping cart</span>
         </div>
