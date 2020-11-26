@@ -111,6 +111,7 @@ if(isset($_SESSION['email']) && ($_SESSION['role'] == "admin" || $_SESSION['role
         </html>
     <?php
 } else {
+    $_SESSION["back"] = "order";
     header('Location:login.php');
     exit();
 }

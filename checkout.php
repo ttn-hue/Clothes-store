@@ -252,6 +252,7 @@ include('includes/db_connection.php');
     </html>
 <?php
 } else {
+    $_SESSION["back"] = "checkout";
     header('Location:login.php');
     exit();
 }
