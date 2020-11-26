@@ -160,22 +160,25 @@ if(isset($_SESSION['email'])){ // authentification
                             <h2>Order Items</h2>
                             <div class="order-item-list">
                                 <?php
-                                    $shoppingcart = $_SESSION['shoppingcart'];
-                                    foreach($shoppingcart as $object)
+                                    if(isset($_POST['shoppingcart']))
                                     {
-                                        ?>
-                                            <div class="single-order">
-                                                <img src="image/product-1.jpg" alt="order item image">
-                                                <ul>
-                                                    <li><?php echo $object->name; ?></li>
-                                                    <li><?php echo "$".number_format((float)$object->price, 2, '.', ''); ?></li>
-                                                    <li><br></li>
-                                                    <li>Quantity: <?php echo $object->quantity; ?></li>
-                                                    <li>Size: M</li>
-                                                    <li>Color: Red</li>
-                                                </ul>
-                                            </div>
-                                        <?php
+                                        $shoppingcart = $_SESSION['shoppingcart'];
+                                        foreach($shoppingcart as $object)
+                                        {
+                                            ?>
+                                                <div class="single-order">
+                                                    <img src="image/product-1.jpg" alt="order item image">
+                                                    <ul>
+                                                        <li><?php echo $object->name; ?></li>
+                                                        <li><?php echo "$".number_format((float)$object->price, 2, '.', ''); ?></li>
+                                                        <li><br></li>
+                                                        <li>Quantity: <?php echo $object->quantity; ?></li>
+                                                        <li>Size: M</li>
+                                                        <li>Color: Red</li>
+                                                    </ul>
+                                                </div>
+                                            <?php
+                                        }
                                     }
                                 ?>
                             </div>
@@ -185,17 +188,20 @@ if(isset($_SESSION['email'])){ // authentification
                                         $subtotal = 0.00;
                                         $tax = 0.00;
                                         $total = 0.00;
-
-                                        $shoppingcart = $_SESSION['shoppingcart'];
-                                        foreach($shoppingcart as $object)
+                                        if(isset($_POST['shoppingcart']))
                                         {
-                                            // get subtotal amount
-                                            $price = number_format((float)$object->price, 2, '.', '');
-                                            $subtotal += (float)$object->quantity * $price;
+                                            $shoppingcart = $_SESSION['shoppingcart'];
+                                            foreach($shoppingcart as $object)
+                                            {
+                                                // get subtotal amount
+                                                $price = number_format((float)$object->price, 2, '.', '');
+                                                $subtotal += (float)$object->quantity * $price;
+                                            }
+                                            $subtotal = number_format((float)$subtotal, 2, '.', '');
+                                            $total += $subtotal + $tax;
+                                            $total = number_format((float)$total, 2, '.', '');
                                         }
-                                        $subtotal = number_format((float)$subtotal, 2, '.', '');
-                                        $total += $subtotal + $tax;
-                                        $total = number_format((float)$total, 2, '.', '');
+
                                     ?>
                                         <li><span>Subtotal</span><span id="subtotal"><?php echo "$".$subtotal; ?></span></li>
                                         <li><span>Tax</span><span id="tax">$0.00</span></li>
